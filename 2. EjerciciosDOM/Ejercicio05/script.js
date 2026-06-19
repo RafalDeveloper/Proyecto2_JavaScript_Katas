@@ -1,3 +1,5 @@
+//! Basandote en el array siguiente, crea una lista ul > li dinámicamente en el html que imprima cada uno de los albums. Que tenga la apariencia de una web completa dentro de lo posible.
+
 const albums = [
   "De Mysteriis Dom Sathanas",
   "Reign of Blood",
@@ -5,3 +7,14 @@ const albums = [
   "Painkiller",
   "Iron Fist",
 ];
+
+const ulList = document.createElement("ul")
+
+for (const element of albums) {
+  const liAlbum = document.createElement("li")
+  liAlbum.textContent = element
+  ulList.appendChild(liAlbum)  
+}
+
+ulList.classList.add("listaUlArray")
+document.body.appendChild(ulList)

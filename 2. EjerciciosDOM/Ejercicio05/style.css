@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(32, 32, 32);
+  color: rgb(0, 123, 245);
+  font-family: Arial, sans-serif;
+}
+
+.listaUlArray {
+    list-style: none;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 0;
+}
+
+.listaUlArray li {
+    background-color: #2c2c2c;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.listaUlArray li:hover {
+    background-color: rgb(32, 32, 32);
+    box-shadow: 
+        -3px -3px 6px rgba(255, 255, 255, 0.05),
+        3px 3px 6px rgba(0, 0, 0, 0.6);
+}
