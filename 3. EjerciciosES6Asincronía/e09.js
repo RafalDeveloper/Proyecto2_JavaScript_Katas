@@ -8,3 +8,27 @@
 //! URL: https://pokeapi.co/api/v2/pokemon/1
 
 //! Tened en cuenta que esta URL se refiere al pokemon número 1, que es bulbasaur, debemos hallar la manera de con una url similar ir consiguiendo pokemons aleatorios dentro de unos límites.
+
+// Obtengo un numero aleatorio redondeado hacia arriba del 1 al 151 para usarlo de ID en la URL
+let idPokemon = Math.ceil(Math.random() * 151);
+
+// Selecciono nodo de imagen
+const image = document.querySelector(".random-image");
+
+// URL de API
+const urlApi = "https://pokeapi.co/api/v2/pokemon/";
+
+// URL API con el ID aleatorio
+let urlRandom = urlApi + idPokemon;
+
+// Hacemos la petición a la API
+fetch(urlRandom)
+  // Convertimos la respuesta a JSON (llega como texto plano)
+  .then((response) => response.json())
+  // Cuando ya tenemos los datos procesados...
+  .then((data) => {
+    // Accedo a la imagen oficial del Pokémon. Uso corchetes porque official-artwork contiene un guión que JavaScript interpretaría como resta si usara la notación de punto.
+    const imgPokemon = data.sprites.other["official-artwork"].front_default;
+    // Añado atributo src a img para poder acceder a la imagen de la API
+    image.src = imgPokemon;
+  });
